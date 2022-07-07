@@ -1,2 +1,65 @@
 # Iraieph0.github.io
 时光机器制造中
+
+- ## 1.从概率到条件概率
+			- **1.2.条件概率的具体描述**
+				- 这里，我们来具体描述一下条件概率：
+				- 假设我们知道给定事件 ![B](https://www.zhihu.com/equation?tex=B) 已经发生，在此基础上希望知道另一个事件 ![A](https://www.zhihu.com/equation?tex=A) 发生的可能性，此时我们就需要构造出条件概率，它需要先顾及事件 ![B](https://www.zhihu.com/equation?tex=B) 已经发生的信息，然后再求出事件 ![A](https://www.zhihu.com/equation?tex=A) 发生的概率。
+				- 这个条件概率描述的就是在给定事件 ![B](https://www.zhihu.com/equation?tex=B) 发生的情况下，事件 ![A](https://www.zhihu.com/equation?tex=A) 发生的概率，我们专门把他记作： ![P(A|B)](https://www.zhihu.com/equation?tex=P%28A%7CB%29) 。
+				- 那我们回到投掷骰子的问题中来，在投出奇数点数骰子的前提下，投出 ![5](https://www.zhihu.com/equation?tex=5) 的概率有多大？奇数点数一共有 ![\{1,3,5 \}](https://www.zhihu.com/equation?tex=%5C%7B1%2C3%2C5+%5C%7D) 三种，其中出现 ![5](https://www.zhihu.com/equation?tex=5) 的概率是 ![\frac{1}{3}](https://www.zhihu.com/equation?tex=%5Cfrac%7B1%7D%7B3%7D) 。很明显，和单独问投出点数是 ![5](https://www.zhihu.com/equation?tex=5) 的概率计算结果是不同的。
+				- 下面我们来抽象一下条件概率的场景。
+				- 我们再回到最简单、最容易理解的情景下来看，即在古典概率的模式下来分析：假定一个试验有 ![N](https://www.zhihu.com/equation?tex=N) 个等可能的结果，事件 ![A](https://www.zhihu.com/equation?tex=A) 和 ![B](https://www.zhihu.com/equation?tex=B) 分别包含 ![M_1](https://www.zhihu.com/equation?tex=M_1) 个和 ![M_2](https://www.zhihu.com/equation?tex=M_2) 个结果，这其中有 ![M_{12}](https://www.zhihu.com/equation?tex=M_%7B12%7D) 个结果是公共的，这就是同时发生事件 ![A](https://www.zhihu.com/equation?tex=A) 和事件 ![B](https://www.zhihu.com/equation?tex=B) ，即 ![A\cap B](https://www.zhihu.com/equation?tex=A%5Ccap+B) 事件所包含的试验结果数。
+				- 形象的描述一下上述场景，如图所示：
+				- ![](https://pic3.zhimg.com/50/v2-1ac18e6d31ec5213461bb67b6ec00276_720w.jpg?source=1940ef5c)
+				- 图1.事件发生的描述
+				- 那我问你，单纯的发生事件 ![A](https://www.zhihu.com/equation?tex=A) 和事件 ![B](https://www.zhihu.com/equation?tex=B) 的概率是多少？你肯定是脱口而出，分别是 ![\frac{M_1}{N}](https://www.zhihu.com/equation?tex=%5Cfrac%7BM_1%7D%7BN%7D) 和 ![\frac{M_2}{N}](https://www.zhihu.com/equation?tex=%5Cfrac%7BM_2%7D%7BN%7D) ，那进一步到条件概率中来，已知在事件 ![B](https://www.zhihu.com/equation?tex=B) 发生的前提条件下，事件 ![A](https://www.zhihu.com/equation?tex=A) 发生的概率是多少？
+				- 则此时，我们的整体考虑范围由最开始的 ![N](https://www.zhihu.com/equation?tex=N) 个全部的可能结果局限到现在的 ![M_2](https://www.zhihu.com/equation?tex=M_2) 个结果，即 ![B](https://www.zhihu.com/equation?tex=B) 事件发生的结果范围，而这其中只有 ![M_{12}](https://www.zhihu.com/equation?tex=M_%7B12%7D) 个结果对应事件 ![A](https://www.zhihu.com/equation?tex=A) 的发生，那么我们不难计算出，条件概率 ![P(A|B)=\frac{M_{12}}{M_2}](https://www.zhihu.com/equation?tex=P%28A%7CB%29%3D%5Cfrac%7BM_%7B12%7D%7D%7BM_2%7D) 。
+				- **1.3.条件概率的表达式分析**
+				- 为了更加深入的挖掘这里面的内涵，我们进一步的对条件概率的表达式 ![P(A|B)=\frac{M_{12}}{M_2}](https://www.zhihu.com/equation?tex=P%28A%7CB%29%3D%5Cfrac%7BM_%7B12%7D%7D%7BM_2%7D) 进行展开：
+				- ![P(A|B)=\frac{M_{12}}{M_2}=\frac{(M_{12}/N)}{(M_2/N)}=\frac{P(AB)}{P(B)}](https://www.zhihu.com/equation?tex=P%28A%7CB%29%3D%5Cfrac%7BM_%7B12%7D%7D%7BM_2%7D%3D%5Cfrac%7B%28M_%7B12%7D%2FN%29%7D%7B%28M_2%2FN%29%7D%3D%5Cfrac%7BP%28AB%29%7D%7BP%28B%29%7D)
+				- 由此，我们得到了条件概率的一般定义： ![P(A|B)=\frac{P(AB)}{P(B)}](https://www.zhihu.com/equation?tex=P%28A%7CB%29%3D%5Cfrac%7BP%28AB%29%7D%7BP%28B%29%7D) 。
+		- ## 2.两个事件的独立性
+			- 我们在上面的例子中，进一步的进行分析，我们发现事件 ![A](https://www.zhihu.com/equation?tex=A) 的无条件概率 ![P(A)](https://www.zhihu.com/equation?tex=P%28A%29) 与其在给定事件 ![B](https://www.zhihu.com/equation?tex=B) 发生下的条件概率 ![P(A|B)](https://www.zhihu.com/equation?tex=P%28A%7CB%29) 显然是不同的，即： ![P(A|B)\neq P(A)](https://www.zhihu.com/equation?tex=P%28A%7CB%29%5Cneq+P%28A%29) ，而这也是非常普遍的一种情况，这两个概率值一般都存在着差异。
+			- 其实，这反映了两个事件之间存在着一些关联，假如满足 ![P(A|B)>P(A)](https://www.zhihu.com/equation?tex=P%28A%7CB%29%3EP%28A%29) ，则我们可以说事件 ![B](https://www.zhihu.com/equation?tex=B) 的发生使得事件 ![A](https://www.zhihu.com/equation?tex=A) 的发生可能性增大了，即事件 ![B](https://www.zhihu.com/equation?tex=B) 促进了事件 ![A](https://www.zhihu.com/equation?tex=A) 的发生。
+			- 但是如果 ![P(A)=P(A|B)](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28A%7CB%29) 呢，这种情况也是存在的，而且这是一种非常重要的情况，他意味着事件 ![B](https://www.zhihu.com/equation?tex=B) 的发生与否对事件 ![A](https://www.zhihu.com/equation?tex=A) 发生的可能性毫无影响。这时，我们就称 ![A](https://www.zhihu.com/equation?tex=A) , ![B](https://www.zhihu.com/equation?tex=B) 这两个事件独立，并由条件概率的定义式进行转换可以得到：
+			- ![P(A|B)=\frac{P(AB)}{P(B) } \Rightarrow P(AB)=P(A|B)P(B)=P(A)P(B)](https://www.zhihu.com/equation?tex=P%28A%7CB%29%3D%5Cfrac%7BP%28AB%29%7D%7BP%28B%29+%7D+%5CRightarrow+P%28AB%29%3DP%28A%7CB%29P%28B%29%3DP%28A%29P%28B%29)
+			- 实际上，我们拿这个式子来刻画独立性，比单纯使用表达式 ![P(A)=P(A|B)](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28A%7CB%29) 要更好一些，因为 ![P(AB)=P(A)P(B)](https://www.zhihu.com/equation?tex=P%28AB%29%3DP%28A%29P%28B%29) 这个表达式不受概率 ![P(B)](https://www.zhihu.com/equation?tex=P%28B%29) 是否为 ![0](https://www.zhihu.com/equation?tex=0) 的因素制约。
+			- 由此我们说，如果 ![A](https://www.zhihu.com/equation?tex=A) 和 ![B](https://www.zhihu.com/equation?tex=B) 两个事件满足 ![P(AB)=P(A)P(B)](https://www.zhihu.com/equation?tex=P%28AB%29%3DP%28A%29P%28B%29) ，则称事件 ![A](https://www.zhihu.com/equation?tex=A) 和事件 ![B](https://www.zhihu.com/equation?tex=B) 独立。
+		- ## 3.从条件概率到全概率公式
+			- 首先我们假设 ![B_1,B_2,B_3,...,B_n](https://www.zhihu.com/equation?tex=B_1%2CB_2%2CB_3%2C...%2CB_n) 为有限个或无限可数个事件，他们之间两两互斥且在每次试验中至少发生其中一个，我们用图直观的表示如下：
+			- ![](https://pic2.zhimg.com/50/v2-147c002d9f8ec3414197bb50e39617b2_720w.jpg?source=1940ef5c)
+			- 图2.事件两两互斥且每次实验至少发生其中一个
+			- 我们用表达式描述上面这幅图的含义就是：
+			- ![B_iB_j=\phi](https://www.zhihu.com/equation?tex=B_iB_j%3D%5Cphi)
+			- ![B_1+B_2+B_3...+B_n=\Omega](https://www.zhihu.com/equation?tex=B_1%2BB_2%2BB_3...%2BB_n%3D%5COmega)
+			- 现在我们接着引入另一个事件 ![A](https://www.zhihu.com/equation?tex=A) ，如下图所示：
+			- ![](https://pic1.zhimg.com/50/v2-93531fddd6206b0b7e489fc3fd35dcd1_720w.jpg?source=1940ef5c)
+			- 图3.引入新的事件A
+			- 很明显，因为 ![\Omega](https://www.zhihu.com/equation?tex=%5COmega) 是一个必然事件（换句话说就是事件全集），因此有 ![P(A)=P(A \Omega )](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28A+%5COmega+%29) ，进一步进行推导有： ![P(A)=P(A\Omega)=P(AB_1+AB_2+AB_3+...+AB_n)](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28A%5COmega%29%3DP%28AB_1%2BAB_2%2BAB_3%2B...%2BAB_n%29) ，因为事件 ![B_i,B_j](https://www.zhihu.com/equation?tex=B_i%2CB_j) 两两互斥，显然 ![AB_1,AB_2,AB_3,...,AB_n](https://www.zhihu.com/equation?tex=AB_1%2CAB_2%2CAB_3%2C...%2CAB_n) 也两两互斥，因此就有：
+			- ![P(A)=P(AB_1)+P(AB_2)+P(AB_3)+...+P(AB_n)](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28AB_1%29%2BP%28AB_2%29%2BP%28AB_3%29%2B...%2BP%28AB_n%29)
+			- 再由条件概率公式 ![P(AB_i)=P(B_i)P(A|B_i)](https://www.zhihu.com/equation?tex=P%28AB_i%29%3DP%28B_i%29P%28A%7CB_i%29) 进行代入，将上式转换得到：
+			- ![P(A)=P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+...+P(B_n)P(A|B_n)](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28B_1%29P%28A%7CB_1%29%2BP%28B_2%29P%28A%7CB_2%29%2B...%2BP%28B_n%29P%28A%7CB_n%29)
+			- 这就是我们最终得到的**全概率公式**，“全”字的意义在于：全部的概率 ![P(A)](https://www.zhihu.com/equation?tex=P%28A%29) 被分解成了许多的部分概率之和。
+			- 我们再次回过头来看看全概率公式的表达式，我们从式子里可以非常直观的发现：事件 ![A](https://www.zhihu.com/equation?tex=A) 的概率 ![P(A)](https://www.zhihu.com/equation?tex=P%28A%29) 应该处于最小的 ![P(A|B_i)](https://www.zhihu.com/equation?tex=P%28A%7CB_i%29) 和最大的 ![P(A|B_j)](https://www.zhihu.com/equation?tex=P%28A%7CB_j%29) 之间，它不是所有条件概率 ![P(A|B_k)](https://www.zhihu.com/equation?tex=P%28A%7CB_k%29) 的算术平均，因为他们各自被使用的机会( 即 ![P(B_i)](https://www.zhihu.com/equation?tex=P%28B_i%29) )各不相同。因此全概率 ![P(A)](https://www.zhihu.com/equation?tex=P%28A%29) 就是各 ![P(A|B_k)](https://www.zhihu.com/equation?tex=P%28A%7CB_k%29) 以 ![P(B_k)](https://www.zhihu.com/equation?tex=P%28B_k%29) 为权的加权平均值。
+			- 全概率公式的实际价值在于，很多时候，我们直接去计算事件 ![A](https://www.zhihu.com/equation?tex=A) 的概率是比较困难的，但是如果条件概率 ![P(A|B_k)](https://www.zhihu.com/equation?tex=P%28A%7CB_k%29) 是已知的，或很容易被我们推导计算时，全概率公式就成了计算概率 ![P(A)](https://www.zhihu.com/equation?tex=P%28A%29) 的很好的途径。
+		- ## 4.聚焦贝叶斯公式
+			- **4.1.贝叶斯公式概述**
+			- 了解了全概率公式之后，我们可以进一步的处理条件概率的表达式，得到下面这个式子：
+			- ![P(B_i|A)=\frac{P(AB_i)}{P(A)}=\frac{P(B_i)P(A|B_i)}{P(A)}=\frac{P(B_i)P(A|B_i)}{P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+...+P(B_n)P(A|B_n)}](https://www.zhihu.com/equation?tex=P%28B_i%7CA%29%3D%5Cfrac%7BP%28AB_i%29%7D%7BP%28A%29%7D%3D%5Cfrac%7BP%28B_i%29P%28A%7CB_i%29%7D%7BP%28A%29%7D%3D%5Cfrac%7BP%28B_i%29P%28A%7CB_i%29%7D%7BP%28B_1%29P%28A%7CB_1%29%2BP%28B_2%29P%28A%7CB_2%29%2B...%2BP%28B_n%29P%28A%7CB_n%29%7D)
+			- 这就是大名鼎鼎的贝叶斯公式。
+			- 这个式子你千万不要觉得他平淡无奇，觉得仅仅只是数学式子的推导和罗列。这一个公式里包含了全概率公式、条件概率、贝叶斯准则，我们来挖掘一下里面所蕴藏的最重要的内涵：
+			- 贝叶斯公式将条件概率 ![P(A|B)](https://www.zhihu.com/equation?tex=P%28A%7CB%29) 和条件概率 ![P(B|A)](https://www.zhihu.com/equation?tex=P%28B%7CA%29) 紧密的联系了起来，其最根本的数学基础就是因为 ![P(A|B)P(B)=P(B|A)P(A)](https://www.zhihu.com/equation?tex=P%28A%7CB%29P%28B%29%3DP%28B%7CA%29P%28A%29) ，他们都等于 ![P(AB)](https://www.zhihu.com/equation?tex=P%28AB%29) 。
+			- 那这里面具体的深刻内涵是什么呢？我们接着往下看：
+			- **4.2.本质内涵：由因到果，由果推因**
+			- 现实中，我们可以把事件 ![A](https://www.zhihu.com/equation?tex=A) 看成是结果，把事件 ![B_1,B_2,...,B_n](https://www.zhihu.com/equation?tex=B_1%2CB_2%2C...%2CB_n) 看成是导致这个结果的各种可能的原因。
+			- 那么，我们所介绍的全概率公式 ![P(A)=P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+...+P(B_n)P(A|B_n)](https://www.zhihu.com/equation?tex=P%28A%29%3DP%28B_1%29P%28A%7CB_1%29%2BP%28B_2%29P%28A%7CB_2%29%2B...%2BP%28B_n%29P%28A%7CB_n%29) 就是由各种原因推理出结果事件发生的概率，是**由因到果**；
+			- 但是，更重要、更实际的应用场景是，我们在日常生活中常常是观察到某种现象，然后去反推造成这种现象的各种原因的概率。简单点说，就是**由果推因**。
+			- 贝叶斯公式 ![P(B_i|A)=\frac{P(AB_i)}{P(A)}=\frac{P(B_i)P(A|B_i)}{\sum_{j}{P(B_j)P(A|B_j)}}](https://www.zhihu.com/equation?tex=P%28B_i%7CA%29%3D%5Cfrac%7BP%28AB_i%29%7D%7BP%28A%29%7D%3D%5Cfrac%7BP%28B_i%29P%28A%7CB_i%29%7D%7B%5Csum_%7Bj%7D%7BP%28B_j%29P%28A%7CB_j%29%7D%7D) ，最终求得的就是条件概率 ![P(B_i|A)](https://www.zhihu.com/equation?tex=P%28B_i%7CA%29) ，就是在观察到结果事件$A$已经发生的情况下，我们推断结果事件 ![A](https://www.zhihu.com/equation?tex=A) 是由原因 ![B_i](https://www.zhihu.com/equation?tex=B_i) 造成的概率的大小，以支撑我们后续的判断。
+			- 那么我们可以说，单纯的概率 ![P(B_i)](https://www.zhihu.com/equation?tex=P%28B_i%29) 我们叫做**先验概率**，指的是在没有别的前提信息情况下的概率值，这个值一般需要借助我们的经验估计得到。
+			- 而条件概率 ![P(B_i|A)](https://www.zhihu.com/equation?tex=P%28B_i%7CA%29) ，我们把他叫做是**后验概率**，他代表了在获得了信息 ![A](https://www.zhihu.com/equation?tex=A) 之后 ![B_i](https://www.zhihu.com/equation?tex=B_i) 出现的概率，可以说后验概率是先验概率在获取了新信息之后的一种修正。
+			- **4.3.贝叶斯公式的应用举例**
+			- 比如，贝叶斯公式应用的一个常见例子就是 ![X](https://www.zhihu.com/equation?tex=X) 光片的病理推断案例，在某个病人的 ![X](https://www.zhihu.com/equation?tex=X) 光片中，医生看到了一个阴影，这就是结果事件 ![A](https://www.zhihu.com/equation?tex=A) ，我们希望对造成这个结果的三种可能原因（即：原因 ![1](https://www.zhihu.com/equation?tex=1) ：恶性肿瘤；原因 ![2](https://www.zhihu.com/equation?tex=2) ：良性肿瘤；原因 ![3](https://www.zhihu.com/equation?tex=3) ：其他原因）进行分析判断，推断分属于各个原因的概率，如图所示：
+			- ![](https://pic4.zhimg.com/50/v2-e8afcaf08f1a5c507f985066481b1d22_720w.jpg?source=1940ef5c)
+			- 图4.X光片阴影原因举例
+			- 例如，我们想求出原因是恶性肿瘤的概率，也就是求条件概率： ![P(B_1|A)](https://www.zhihu.com/equation?tex=P%28B_1%7CA%29) 的值。
+			- 我们只要知道在这三种原因下出现阴影的概率，也就是 ![P(A|B_1)](https://www.zhihu.com/equation?tex=P%28A%7CB_1%29) ， ![P(A|B_2)](https://www.zhihu.com/equation?tex=P%28A%7CB_2%29) ， ![P(A|B_3)](https://www.zhihu.com/equation?tex=P%28A%7CB_3%29) ，以及三种原因的先验概率： ![P(B_1)](https://www.zhihu.com/equation?tex=P%28B_1%29) ， ![P(B_2)](https://www.zhihu.com/equation?tex=P%28B_2%29) ， ![P(B_3)](https://www.zhihu.com/equation?tex=P%28B_3%29) ，就能通过贝叶斯公式 ![P(B_1|A)=\frac{P(B_1)P(A|B_1)}{P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+P(B_3)P(A|B_3)}](https://www.zhihu.com/equation?tex=P%28B_1%7CA%29%3D%5Cfrac%7BP%28B_1%29P%28A%7CB_1%29%7D%7BP%28B_1%29P%28A%7CB_1%29%2BP%28B_2%29P%28A%7CB_2%29%2BP%28B_3%29P%28A%7CB_3%29%7D) 求得，而上述这些需要我们知道的值，基本上都可以通过历史统计数据得到。
